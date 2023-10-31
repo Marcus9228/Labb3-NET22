@@ -1,0 +1,90 @@
+﻿<Window x:Class="Labb3_NET22.CreateQuizWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labb3_NET22"
+        mc:Ignorable="d" FontSize="24"
+        Title="CreateQuizWindow" Height="750" Width="1200">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBlock x:Name="NameOfQuizTextBlock" Grid.Column="2" Grid.Row="1" />
+        <TextBlock HorizontalAlignment="Center" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="1" FontWeight="Bold" FontSize="36" Text="QUIZ MANAGER" Margin="0, 0, 0, 20"/>
+        <TextBlock x:Name="UploadImgHint" Grid.Column="6" Grid.Row="1" TextWrapping="Wrap" Width="150" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Text="{Binding}"/>
+        <TextBlock Grid.Column="2" Grid.Row="2" Text="Enter the question: "/>
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="Answer 1 (Correct): " />
+        <TextBlock Grid.Column="2" Grid.Row="4" Text="Answer 2: " />
+        <TextBlock Grid.Column="2" Grid.Row="5" Text="Answer 3: " />
+        <TextBlock Grid.Column="2" Grid.Row="6" Text="Answer 4 "/>
+        <TextBlock Grid.Column="2" Grid.Row="7" Text="Select a category"/>
+        <TextBlock Grid.Column="2" Grid.Row="10" Text="Select a question to edit: "/>
+        <TextBlock Grid.Column="2" Grid.Row="12" Text="Rename quiz (Optional): "/>
+
+        <Image x:Name="CreateQuizImage" Grid.Column="6" Grid.ColumnSpan="3" HorizontalAlignment="Left" Grid.Row="2" Grid.RowSpan="5" Height="200" Width="200" Margin="20, 0" Source="{Binding ImageSource}"/>
+
+        <RichTextBox x:Name="QuestionInputTextBox" Grid.Column="3" Grid.Row="2" Width="250" MaxHeight="40" FontSize="16" />
+        <RichTextBox x:Name="Answer1TextBox" Grid.Column="3" Grid.Row="3" Width="250" MaxHeight="40" FontSize="16"/>
+        <RichTextBox x:Name="Answer2TextBox" Grid.Column="3" Grid.Row="4" Width="250" MaxHeight="40" FontSize="16"/>
+        <RichTextBox x:Name="Answer3TextBox" Grid.Column="3" Grid.Row="5" Width="250" MaxHeight="40" FontSize="16"/>
+        <RichTextBox x:Name="Answer4TextBox" Grid.Column="3" Grid.Row="6" Width="250" MaxHeight="40" FontSize="16"/>
+        <TextBox x:Name="RenameQuizTexBox" Grid.Column="3" Grid.Row="12" Width="250" />
+
+        <Button x:Name="UploadImgButton" Grid.Column="6" Grid.ColumnSpan="1" Grid.Row="7" Width="250" Content="Upload new image" Click="UploadImgButton_Click"/>
+        <Button x:Name="SaveQuestionButton" Grid.Column="2" Grid.ColumnSpan="1" Grid.Row="8" Content="Save as new question" Click="SaveQuestionButton_Click" />
+        <Button x:Name="SaveChangesButton" Grid.Column="6" Grid.Row="10" Content="save changes" Width="250" HorizontalAlignment="Left" Click="SaveChangesButton_Click"/>
+        <Button x:Name="DeleteQuestionButton" Grid.Column="2" Grid.Row="11" Content="Delete question" Click="DeleteQuestionButton_Click"/>
+        <Button x:Name="ChangeNameButton" Grid.Column="6" Grid.Row="12" Content="Save Name" Width="250" HorizontalAlignment="Left" Click="ChangeNameButton_Click"/>
+        <!--<Button x:Name="SaveQuizButton" Grid.Column="3" Grid.ColumnSpan="1" Grid.Row="13" Grid.RowSpan="1" Content="Save Quiz" Width="250" Height="70" Click="SaveQuizButton_Click" />-->
+        
+
+        <ComboBox x:Name="EditQuestionComboBox" Grid.Column="3" Grid.Row="10" SelectionChanged="EditQuestionComboBox_SelectionChanged" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Statement}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="QuestionCategoryComboBox" Grid.Column="3" Grid.Row="7" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+    </Grid>
+</Window>
