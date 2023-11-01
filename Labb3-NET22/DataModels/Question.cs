@@ -17,15 +17,15 @@ public class Question : NotifyPropertyChangedHandler
     {
         get { return _statement; }
         set { _statement = value; NotifyPropertyChanged(nameof(Statement)); }
-
     }
+
     private int _correctAnswer;
     public int CorrectAnswer
     {
         get { return _correctAnswer; }
         set { _correctAnswer = value; NotifyPropertyChanged(nameof(CorrectAnswer)); }
-
     }
+
     private List<string> _answers;
     public List<string> Answers
     {
@@ -59,6 +59,7 @@ public class Question : NotifyPropertyChangedHandler
             NotifyPropertyChanged(nameof(ImageSource));
         }
     }
+
     [Newtonsoft.Json.JsonConstructor]
     public Question(string statement, int correctAnswer, List<string> answers)
     {

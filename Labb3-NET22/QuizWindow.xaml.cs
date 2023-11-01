@@ -44,8 +44,11 @@ namespace Labb3_NET22
 
         private void SetQuestion()
         {
+            this.WindowState = WindowState.Maximized;
+            //this.SizeToContent = SizeToContent.WidthAndHeight;
             if (indexOfQuestion >= QuizGenerator.randomQuestions.Count)
             {
+                BackButton.Visibility = Visibility.Visible;
                 MessageBox.Show($"Quiz completed! Your score is {CalculateScore()}%");
                 Answer1Button.IsEnabled = false;
                 Answer2Button.IsEnabled = false;
@@ -104,6 +107,11 @@ namespace Labb3_NET22
             CheckAnswer(3);
             ScoreTextBlock.Text = $"score: {CalculateScore()}%";
             SetQuestion();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void CheckAnswer(int selectedIndex)

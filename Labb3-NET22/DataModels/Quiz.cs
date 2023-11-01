@@ -11,6 +11,7 @@ public class Quiz : NotifyPropertyChangedHandler
         get { return _questions; }
         set { _questions = value; NotifyPropertyChanged(nameof(Questions)); }
     }
+
     private string _title;
     public string Title
     {
@@ -44,6 +45,7 @@ public class Quiz : NotifyPropertyChangedHandler
     {
         Questions.RemoveAt(index);
     }
+
     public override bool Equals(object obj)
     {
         if (obj == null || GetType() != obj.GetType())

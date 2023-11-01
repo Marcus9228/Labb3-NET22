@@ -94,5 +94,10 @@ namespace Labb3_NET22
             }
             return null;
         }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

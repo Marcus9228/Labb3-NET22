@@ -38,11 +38,11 @@ namespace Labb3_NET22
             {
                 if (quiz.Title == JsonHelperClass.SelectedQuiz.Title)
                 {
-                    NameOfQuizTextBlock.Text = ("Name of quiz: " + quiz.Title);
+                    NameOfQuizTextBlock.Text = (quiz.Title);
                 }
             }
-
-            QuestionCategoryComboBox.ItemsSource = category;
+            JsonHelperClass.SetupCategory();
+            QuestionCategoryComboBox.ItemsSource = JsonHelperClass.Category;
             foreach (Quiz quiz in JsonHelperClass.ListOfQuiz)
             {
                 if (JsonHelperClass.SelectedQuiz.Title == quiz.Title)
@@ -53,6 +53,7 @@ namespace Labb3_NET22
             }
             UploadImgHint.Text = "Select a question or save as new question before uploading new image";
 
+            UploadImgButton.Visibility = Visibility.Collapsed;
             UploadImgButton.IsEnabled = false;
 
             LoadDefaultImage();
@@ -98,6 +99,7 @@ namespace Labb3_NET22
                 }
             }
             UploadImgHint.Text = "Select a question or save as new question before uploading new image";
+            UploadImgButton.Visibility = Visibility.Collapsed;
             UploadImgButton.IsEnabled = false;
         }
 
@@ -121,6 +123,7 @@ namespace Labb3_NET22
                 EditQuestionComboBox.SelectedIndex = -1;
                 await JsonHelperClass.WriteFiles();
                 UploadImgHint.Text = "Select a question or save as new question before uploading new image";
+                UploadImgButton.Visibility = Visibility.Collapsed;
                 UploadImgButton.IsEnabled = false;
 
                 MessageBox.Show("Question was updated");
@@ -147,11 +150,13 @@ namespace Labb3_NET22
                 Answer3TextBox.AppendText(JsonHelperClass.SelectedQuestion.Answers[2]);
                 Answer4TextBox.AppendText(JsonHelperClass.SelectedQuestion.Answers[3]);
                 CreateQuizImage.Source = JsonHelperClass.SelectedQuestion.ImageSource;
-                    UploadImgButton.IsEnabled = true;
+                UploadImgButton.Visibility = Visibility.Visible;
+                UploadImgButton.IsEnabled = true;
 
                 if (EditQuestionComboBox.SelectedItem != null)
                 {
                     UploadImgHint.Text = "";
+                    UploadImgButton.Visibility = Visibility.Visible;
                     UploadImgButton.IsEnabled = true;
 
                     QuestionCategoryComboBox.SelectedItem = JsonHelperClass.SelectedQuestion.Category;
@@ -184,6 +189,7 @@ namespace Labb3_NET22
                 }
             }
             UploadImgHint.Text = "Select a question or save as new question before uploading new image";
+            UploadImgButton.Visibility = Visibility.Collapsed;
             UploadImgButton.IsEnabled = false;
         }
 
@@ -201,12 +207,11 @@ namespace Labb3_NET22
                 if (quiz.Title == JsonHelperClass.SelectedQuiz.Title)
                 {
                     quiz.Title = RenameQuizTexBox.Text;
-                    NameOfQuizTextBlock.Text = ("Name of quiz: " + quiz.Title);
+                    NameOfQuizTextBlock.Text = (quiz.Title);
                     break;
                 }
             }
             await JsonHelperClass.WriteFiles();
-
         }
 
         private void UploadImgButton_Click(object sender, RoutedEventArgs e)
@@ -234,6 +239,11 @@ namespace Labb3_NET22
             Answer2TextBox.Document.Blocks.Clear();
             Answer3TextBox.Document.Blocks.Clear();
             Answer4TextBox.Document.Blocks.Clear();
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

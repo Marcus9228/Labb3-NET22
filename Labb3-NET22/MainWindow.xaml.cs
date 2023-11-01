@@ -48,5 +48,10 @@ namespace Labb3_NET22
             JsonHelperClass.SetupCategory();
             gameWindow.ShowDialog();
         }
+
+        private void ExitGameButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

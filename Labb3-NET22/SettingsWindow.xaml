@@ -4,8 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb3_NET22"
-        mc:Ignorable="d" FontSize="24"
-        Title="SettingsWindow" Height="750" Width="1000">
+        mc:Ignorable="d" FontSize="24" Foreground="MediumPurple"
+        Title="SettingsWindow" Height="1000" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
@@ -19,7 +19,7 @@
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -33,6 +33,11 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
+
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/BackgroundImage.png"/>
+        </Grid.Background>
+
         <TextBlock HorizontalAlignment="Center" Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="1" FontWeight="Bold" FontSize="36" Text="Settings"/>
         <TextBlock Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="7" HorizontalAlignment="Center" Margin="10" Text="Select a quiz: "/>
         <TextBlock Grid.Column="1" Grid.ColumnSpan="7" Grid.Row="6" HorizontalAlignment="Center" Margin="10" Text="Enter a unique name for the Quiz:"/>
@@ -49,8 +54,17 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
 
-        <Button x:Name="EditQuizzButton" Grid.Column="4" Grid.ColumnSpan="7" Grid.Row="4" Width="250" Margin="10" Content="Edit selected" Click="EditQuizzButton_Click"/>
-        <Button x:Name="DeleteQuizzButton" Grid.Column="4" Grid.ColumnSpan="7" Grid.Row="5" Width="250" Margin="10" Content="Delete selected" Click="DeleteQuizzButton_Click"/>
-        <Button x:Name="CreateQuizzButton" Grid.Column="1" Grid.ColumnSpan="9"  Grid.Row="8" Width="500" Margin="10" Content="Create" Click="CreateQuizzButton_Click"/>
+        <Button BorderBrush="Transparent" Background="Transparent" x:Name="EditQuizzButton" Grid.Column="4" Grid.ColumnSpan="7" Grid.Row="4" Width="250" Margin="10" Click="EditQuizzButton_Click">
+            <TextBlock FontWeight="Bold" Foreground="MediumPurple" TextDecorations="Underline" Text="Edit Selected"/>
+        </Button>
+        <Button BorderBrush="Transparent" Background="Transparent" x:Name="DeleteQuizzButton" Grid.Column="4" Grid.ColumnSpan="7" Grid.Row="5" Width="250" Margin="10" Click="DeleteQuizzButton_Click">
+            <TextBlock FontWeight="Bold" Foreground="MediumPurple" TextDecorations="Underline" Text="Delete Selected"/>
+        </Button>
+        <Button BorderBrush="Transparent" Background="Transparent" x:Name="CreateQuizzButton" Grid.Column="1" Grid.ColumnSpan="9"  Grid.Row="8" Width="500" Margin="10" Click="CreateQuizzButton_Click">
+            <TextBlock FontWeight="Bold" Foreground="MediumPurple" TextDecorations="Underline" Text="Create Quiz"/>
+        </Button>
+        <Button BorderBrush="Transparent" Background="Transparent" x:Name="BackButton" Grid.Column="3" Grid.ColumnSpan="9" Grid.Row="9" Grid.RowSpan="1" Width="250" Height="70" Click="BackButton_Click">
+            <TextBlock FontSize="30" FontWeight="Bold" Foreground="MediumPurple" TextDecorations="Underline" Text="Back"/>
+        </Button>
     </Grid>
 </Window>

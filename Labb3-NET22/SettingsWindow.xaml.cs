@@ -109,5 +109,9 @@ namespace Labb3_NET22
             SelectQuizComboBox.ItemsSource = JsonHelperClass.ListOfQuiz;
         }
 
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
