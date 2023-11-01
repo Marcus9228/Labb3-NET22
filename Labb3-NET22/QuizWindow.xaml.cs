@@ -35,7 +35,6 @@ namespace Labb3_NET22
         private void SetQuestion()
         {
             this.WindowState = WindowState.Maximized;
-            //this.SizeToContent = SizeToContent.WidthAndHeight;
             if (indexOfQuestion >= QuizGenerator.randomQuestions.Count)
             {
                 BackButton.Visibility = Visibility.Visible;

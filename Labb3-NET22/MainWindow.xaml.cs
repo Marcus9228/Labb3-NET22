@@ -32,7 +32,6 @@ namespace Labb3_NET22
         private void SetupGameButton_Click(object sender, RoutedEventArgs e)
         {
             GameWindow gameWindow = new GameWindow();
-            //JsonHelperClass.SetupCategory();
             gameWindow.ShowDialog();
         }
 

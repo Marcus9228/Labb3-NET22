@@ -29,7 +29,6 @@ namespace Labb3_NET22
                     NameOfQuizTextBlock.Text = (quiz.Title);
                 }
             }
-            //JsonHelperClass.SetupCategory();
             QuestionCategoryComboBox.ItemsSource = JsonHelperClass.Category;
             foreach (Quiz quiz in JsonHelperClass.ListOfQuiz)
             {

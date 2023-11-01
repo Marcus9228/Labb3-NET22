@@ -8,7 +8,6 @@ namespace Labb3_NET22.DataModels
 {
     public static class JsonHelperClass
     {
-        //public static List<string> Category { get; set; } = new List<string>();
         public static List<string> Category = new List<string>
         {
             "Art",
@@ -69,19 +68,6 @@ namespace Labb3_NET22.DataModels
             await File.WriteAllTextAsync(filepath, json);
             await ReadFiles();
         }
-
-        //public static void SetupCategory()
-        //{
-        //    Category.Clear();
-        //    Category.Add("History");
-        //    Category.Add("Sports");
-        //    Category.Add("Science");
-        //    Category.Add("Movies");
-        //    Category.Add("Music");
-        //    Category.Add("Geography");
-        //    Category.Add("Politics");
-        //    Category.Add("Other");
-        //}
     }
 }
 
