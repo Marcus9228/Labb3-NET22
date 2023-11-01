@@ -1,25 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 using System.IO;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Labb3_NET22.DataModels;
 using Microsoft.Win32;
-using Newtonsoft.Json;
-using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Labb3_NET22
 {
@@ -41,7 +29,7 @@ namespace Labb3_NET22
                     NameOfQuizTextBlock.Text = (quiz.Title);
                 }
             }
-            JsonHelperClass.SetupCategory();
+            //JsonHelperClass.SetupCategory();
             QuestionCategoryComboBox.ItemsSource = JsonHelperClass.Category;
             foreach (Quiz quiz in JsonHelperClass.ListOfQuiz)
             {

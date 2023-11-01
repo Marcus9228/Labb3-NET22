@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Windows.Documents;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Newtonsoft.Json;
 
 namespace Labb3_NET22.DataModels;
 

@@ -3,15 +3,38 @@ using System.IO;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
-using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace Labb3_NET22.DataModels
 {
     public static class JsonHelperClass
     {
-        public static List<string> Category { get; set; } = new List<string>();
-        
+        //public static List<string> Category { get; set; } = new List<string>();
+        public static List<string> Category = new List<string>
+        {
+            "Art",
+            "Astronomy",
+            "Biology",
+            "Cinema",
+            "Comics",
+            "Computing",
+            "Cuisine",
+            "Geography",
+            "History",
+            "Language",
+            "Literature",
+            "Mathematics",
+            "Movies",
+            "Music",
+            "Mythology",
+            "Other",
+            "Physics",
+            "Politics",
+            "Science",
+            "Space Exploration",
+            "Sports",
+            "Technology",
+            "Zoology"
+        };
         private static List<Quiz> _listOfQuiz = new List<Quiz>();
         public static List<Quiz> ListOfQuiz 
         {
@@ -47,18 +70,18 @@ namespace Labb3_NET22.DataModels
             await ReadFiles();
         }
 
-        public static void SetupCategory()
-        {
-            Category.Clear();
-            Category.Add("History");
-            Category.Add("Sports");
-            Category.Add("Science");
-            Category.Add("Movies");
-            Category.Add("Music");
-            Category.Add("Geography");
-            Category.Add("Politics");
-            Category.Add("Other");
-        }
+        //public static void SetupCategory()
+        //{
+        //    Category.Clear();
+        //    Category.Add("History");
+        //    Category.Add("Sports");
+        //    Category.Add("Science");
+        //    Category.Add("Movies");
+        //    Category.Add("Music");
+        //    Category.Add("Geography");
+        //    Category.Add("Politics");
+        //    Category.Add("Other");
+        //}
     }
 }
 
