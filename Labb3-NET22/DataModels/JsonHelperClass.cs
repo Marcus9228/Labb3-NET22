@@ -54,7 +54,10 @@ namespace Labb3_NET22.DataModels
             List<Quiz> deserialized = JsonConvert.DeserializeObject<List<Quiz>>(json);
             ListOfQuiz = deserialized ?? new List<Quiz>();
             ListOfQuiz.Remove(QuizGenerator.SetupDefaultQuiz());
-            ListOfQuiz.Add(QuizGenerator.SetupDefaultQuiz());
+            if (!ListOfQuiz.Contains(QuizGenerator.SetupDefaultQuiz()))
+            {
+                ListOfQuiz.Add(QuizGenerator.SetupDefaultQuiz());
+            }
         }
 
         public static async Task WriteFiles()
