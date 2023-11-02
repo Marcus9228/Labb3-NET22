@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb3_NET22"
         mc:Ignorable="d" FontSize="24" Foreground="MediumPurple"
-        Title="MainWindow" Height="1000" Width="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="MainWindow" MinHeight="1000" MinWidth="900" WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="20"/>
