@@ -10,7 +10,7 @@ namespace Labb3_NET22.DataModels
     public class NotifyPropertyChangedHandler : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler? PropertyChanged;
-        protected void NotifyPropertyChanged(string propertyName)
+        public void NotifyPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
             {
