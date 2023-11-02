@@ -44,7 +44,7 @@
 
         <TextBox x:Name="NameOfQuizTextBox" Grid.Column="1" Grid.ColumnSpan="9" Width="500" Grid.Row="7"/>
 
-        <ComboBox x:Name="SelectQuizComboBox" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="3" Width="500">
+        <ComboBox x:Name="SelectQuizComboBox" Grid.Column="2" Grid.ColumnSpan="7" Grid.Row="3" Width="500" SelectionChanged="SelectQuizComboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

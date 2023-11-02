@@ -1,5 +1,6 @@
 ﻿using Labb3_NET22.DataModels;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Labb3_NET22
 {
@@ -62,19 +63,34 @@ namespace Labb3_NET22
             }
         }
 
+        private async void SelectQuizComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Quiz quiz in JsonHelperClass.ListOfQuiz)
+            {
+                if (quiz.Equals(SelectQuizComboBox.SelectedItem))
+                {
+                    JsonHelperClass.SelectedQuiz = quiz;
+                    break;
+                }
+            }
+            if (JsonHelperClass.SelectedQuiz.Title == "Default Quiz (Not editable)")
+            {
+                EditQuizzButton.IsEnabled = false;
+                DeleteQuizzButton.IsEnabled = false;
+            }
+            else
+            {
+                EditQuizzButton.IsEnabled = true;
+                DeleteQuizzButton.IsEnabled = true;
+            }
+        }
+
+
         private async void EditQuizzButton_Click(object sender, RoutedEventArgs e)
         {
             await JsonHelperClass.ReadFiles();
             if (SelectQuizComboBox.SelectedItem != null)
             {
-                foreach (Quiz quiz in JsonHelperClass.ListOfQuiz)
-                {
-                    if (quiz.Equals(SelectQuizComboBox.SelectedItem))
-                    {
-                        JsonHelperClass.SelectedQuiz = quiz;
-                        break;
-                    }
-                }
                 CreateQuizWindow createQuizWindow = new CreateQuizWindow();
                 createQuizWindow.ShowDialog();
             }

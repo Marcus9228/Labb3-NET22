@@ -38,6 +38,7 @@ namespace Labb3_NET22
             if (indexOfQuestion >= QuizGenerator.randomQuestions.Count)
             {
                 BackButton.Visibility = Visibility.Visible;
+                ExitButton.Visibility = Visibility.Collapsed;
                 MessageBox.Show($"Quiz completed! Your score is {CalculateScore()}%");
                 Answer1Button.IsEnabled = false;
                 Answer2Button.IsEnabled = false;
@@ -99,6 +100,11 @@ namespace Labb3_NET22
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
