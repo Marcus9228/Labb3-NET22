@@ -39,7 +39,7 @@ namespace Labb3_NET22
             {
                 BackButton.Visibility = Visibility.Visible;
                 ExitButton.Visibility = Visibility.Collapsed;
-                MessageBox.Show($"Quiz completed! Your score is {CalculateScore()}%");
+                MessageBox.Show($"Quiz completed! You scored {CalculateScore()}% Correct");
                 Answer1Button.IsEnabled = false;
                 Answer2Button.IsEnabled = false;
                 Answer3Button.IsEnabled = false;
