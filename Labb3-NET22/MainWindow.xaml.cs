@@ -18,10 +18,6 @@ namespace Labb3_NET22
         {
             await JsonHelperClass.ReadFiles();
         }
-        private async void WriteFiles()
-        {
-            await JsonHelperClass.WriteFiles();
-        }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {

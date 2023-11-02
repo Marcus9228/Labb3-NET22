@@ -75,7 +75,5 @@
         <Button BorderBrush="Transparent" Background="Transparent" x:Name="BackButton" Grid.Column="3" Grid.ColumnSpan="9" Grid.Row="10" Grid.RowSpan="1" Width="250" Height="70" Click="BackButton_Click">
             <TextBlock FontSize="30" FontWeight="Bold" Foreground="MediumPurple" TextDecorations="Underline" Text="Back"/>
         </Button>
-
-
     </Grid>
 </Window>
